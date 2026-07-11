@@ -13,25 +13,25 @@ const categories = [
 ];
 ---
 <SiteLayout title="AI 视频速查卡" description="开源、轻量、高密度的 AI 视频创作提示词速查工具。">
-  <section class="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#151518] px-6 py-14 sm:px-12 sm:py-20">
-    <div class="pointer-events-none absolute -right-24 -top-24 size-80 rounded-full bg-white/[.06] blur-3xl"></div>
+  <section class="relative overflow-hidden rounded-[2rem] border border-zinc-900/10 bg-white px-6 py-14 shadow-sm sm:px-12 sm:py-20">
+    <div class="pointer-events-none absolute -right-24 -top-24 size-80 rounded-full bg-zinc-100 blur-3xl"></div>
     <div class="relative max-w-3xl">
       <p class="mb-6 font-mono text-xs uppercase tracking-[.28em] text-zinc-500">THE CREATOR'S FIELD GUIDE / 001</p>
-      <h1 class="max-w-3xl text-5xl font-semibold leading-[.98] tracking-[-.07em] text-white sm:text-7xl">把想象，<br /><span class="text-zinc-500">变成可执行的镜头。</span></h1>
-      <p class="mt-8 max-w-xl text-base leading-7 text-zinc-400 sm:text-lg">一份为 AI 视频创作者准备的高密度提示词词典。少一点教程，多一点即拿即用的镜头语言。</p>
-      <div class="mt-10 flex flex-wrap gap-3"><a href="/camera" class="btn btn-primary rounded-xl px-5">开始速查 <span aria-hidden="true">→</span></a><a href="https://github.com/tianma-if/ai-video-hints" target="_blank" rel="noreferrer" class="btn btn-ghost rounded-xl border border-white/10 px-5 text-zinc-300">在 GitHub 查看</a></div>
+      <h1 class="max-w-3xl text-5xl font-semibold leading-[.98] tracking-[-.07em] text-zinc-950 sm:text-7xl">把想象，<br /><span class="text-zinc-500">变成可执行的镜头。</span></h1>
+      <p class="mt-8 max-w-xl text-base leading-7 text-zinc-500 sm:text-lg">一份为 AI 视频创作者准备的高密度提示词词典。少一点教程，多一点即拿即用的镜头语言。</p>
+      <div class="mt-10 flex flex-wrap gap-3"><a href="/camera" class="btn btn-primary rounded-xl px-5">开始速查 <span aria-hidden="true">→</span></a><a href="https://github.com/tianma-if/ai-video-hints" target="_blank" rel="noreferrer" class="btn btn-ghost rounded-xl border border-zinc-900/10 px-5 text-zinc-700">在 GitHub 查看</a></div>
     </div>
-    <div class="mt-14 flex items-center gap-8 border-t border-white/10 pt-6 text-xs text-zinc-600 sm:mt-20"><span><strong class="text-zinc-300">06</strong> 个创作分类</span><span><strong class="text-zinc-300">∞</strong> 种镜头组合</span><span><strong class="text-zinc-300">COPY</strong> 即用</span></div>
+    <div class="mt-14 flex items-center gap-8 border-t border-zinc-900/10 pt-6 text-xs text-zinc-500 sm:mt-20"><span><strong class="text-zinc-800">06</strong> 个创作分类</span><span><strong class="text-zinc-800">∞</strong> 种镜头组合</span><span><strong class="text-zinc-800">COPY</strong> 即用</span></div>
   </section>
 
   <section class="mt-16">
-    <div class="mb-7 flex items-end justify-between gap-4"><div><p class="mb-2 font-mono text-[11px] uppercase tracking-[.2em] text-zinc-600">INDEX / EXPLORE</p><h2 class="text-2xl font-semibold tracking-tight text-white">从一个维度开始</h2></div><span class="hidden text-xs text-zinc-600 sm:block">按需组合你的下一条 Prompt</span></div>
+    <div class="mb-7 flex items-end justify-between gap-4"><div><p class="mb-2 font-mono text-[11px] uppercase tracking-[.2em] text-zinc-500">INDEX / EXPLORE</p><h2 class="text-2xl font-semibold tracking-tight text-zinc-900">从一个维度开始</h2></div><span class="hidden text-xs text-zinc-500 sm:block">按需组合你的下一条 Prompt</span></div>
     <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
-      {categories.map((category, index) => <a href={`/${category.id}`} class="group rounded-2xl border border-white/10 bg-white/[.025] p-5 transition hover:-translate-y-1 hover:border-white/25 hover:bg-white/[.06]"><div class="flex items-start justify-between"><span class="font-mono text-[11px] text-zinc-700">0{index + 1}</span><span class="text-zinc-700 transition group-hover:translate-x-1 group-hover:text-zinc-300">↗</span></div><h3 class="mt-10 text-base font-semibold text-zinc-200">{category.label}</h3><p class="mt-2 text-xs leading-5 text-zinc-600">{category.desc}</p></a>)}
+      {categories.map((category, index) => <a href={`/${category.id}`} class="group rounded-2xl border border-zinc-900/10 bg-white/70 p-5 transition hover:-translate-y-1 hover:border-zinc-900/25 hover:bg-white"><div class="flex items-start justify-between"><span class="font-mono text-[11px] text-zinc-400">0{index + 1}</span><span class="text-zinc-400 transition group-hover:translate-x-1 group-hover:text-zinc-900">↗</span></div><h3 class="mt-10 text-base font-semibold text-zinc-800">{category.label}</h3><p class="mt-2 text-xs leading-5 text-zinc-500">{category.desc}</p></a>)}
     </div>
   </section>
 
-  <section class="mt-16"><div class="mb-7"><p class="mb-2 font-mono text-[11px] uppercase tracking-[.2em] text-zinc-600">STARTER KIT / POPULAR</p><h2 class="text-2xl font-semibold tracking-tight text-white">常用热门词条</h2></div><Grid>
+  <section class="mt-16"><div class="mb-7"><p class="mb-2 font-mono text-[11px] uppercase tracking-[.2em] text-zinc-500">STARTER KIT / POPULAR</p><h2 class="text-2xl font-semibold tracking-tight text-zinc-900">常用热门词条</h2></div><Grid>
     <Card title="希区柯克变焦 (Dolly Zoom)" desc="相反方向的推拉与变焦，制造强烈的空间扭曲感。" kling="Dolly zoom, camera moves forward while zooming out, dramatic background compression" runway="Camera: Dolly Zoom" preview="/assets/previews/cyberpunk_preview.jpg"><p><strong class="text-zinc-300">适用场景：</strong>发现秘密、心理冲击、角色大彻大悟。</p></Card>
     <Card title="无缝物理转场 (Seamless Transition)" desc="用运动模糊和光影匹配，让镜头自然切入下一幕。" kling="Seamless whip pan transition, motion blur, match cut" runway="Camera: Pan Right fast, high motion blur transition" preview="/assets/previews/cyberpunk_preview.jpg"><p><strong class="text-zinc-300">适用场景：</strong>空间快速移动、动作蒙太奇。</p></Card>
     <Card title="黄金 3 秒强吸睛开头 (Hooks)" desc="用反常动作、情绪冲突或微观特写阻断用户下滑。" kling="Extreme close-up, sudden reveal, dramatic cinematic lighting" sd="第一句旁白：这是我这辈子做过最荒谬的决定..." preview="/assets/previews/cyberpunk_preview.jpg"><p><strong class="text-zinc-300">核心目标：</strong>阻断下滑，创造前三秒高留存。</p></Card>

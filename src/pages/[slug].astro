@@ -15,10 +15,10 @@ const { Content } = await render(doc);
 ---
 <SiteLayout title={doc.data.title} description={doc.data.description} active={doc.id}>
   <article class="prose-docs">
-    <div class="mb-12 max-w-3xl border-b border-white/10 pb-10">
+    <div class="mb-12 max-w-3xl border-b border-zinc-900/10 pb-10">
       <p class="mb-5 font-mono text-xs uppercase tracking-[.25em] text-zinc-600">AI VIDEO HINTS / {doc.id}</p>
-      <h1 class="text-4xl font-semibold tracking-[-.05em] text-white sm:text-5xl">{doc.data.title}</h1>
-      {doc.data.description && <p class="mt-5 max-w-2xl text-base leading-7 text-zinc-400">{doc.data.description}</p>}
+      <h1 class="text-4xl font-semibold tracking-[-.05em] text-zinc-950 sm:text-5xl">{doc.data.title}</h1>
+      {doc.data.description && <p class="mt-5 max-w-2xl text-base leading-7 text-zinc-500">{doc.data.description}</p>}
     </div>
     <Content />
   </article>

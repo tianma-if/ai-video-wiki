@@ -5,13 +5,13 @@ const prompts = [
   ['Kling', kling], ['Runway', runway], ['Luma', luma], ['Midjourney / SD', midjourney], ['Prompt Modifiers', sd],
 ].filter((item): item is [string, string] => Boolean(item[1]));
 ---
-<article class="group overflow-hidden rounded-2xl border border-white/10 bg-[#151518] transition duration-300 hover:-translate-y-1 hover:border-white/25 hover:bg-[#19191d]">
-  {preview && <div class="relative aspect-video overflow-hidden border-b border-white/10 bg-zinc-900"><img src={previewStatic || preview} data-animated={preview} data-static={previewStatic || preview} alt={title} class="h-full w-full object-cover opacity-75 grayscale transition duration-500 group-hover:scale-105 group-hover:opacity-100 group-hover:grayscale-0" loading="lazy" /><span class="absolute bottom-3 left-3 rounded-full border border-white/15 bg-black/60 px-2.5 py-1 text-[10px] uppercase tracking-wider text-white/70 backdrop-blur">Preview</span></div>}
+<article class="group overflow-hidden rounded-2xl border border-zinc-900/10 bg-white transition duration-300 hover:-translate-y-1 hover:border-zinc-900/25 hover:shadow-lg">
+  {preview && <div class="relative aspect-video overflow-hidden border-b border-zinc-900/10 bg-zinc-100"><img src={previewStatic || preview} data-animated={preview} data-static={previewStatic || preview} alt={title} class="h-full w-full object-cover opacity-75 grayscale transition duration-500 group-hover:scale-105 group-hover:opacity-100 group-hover:grayscale-0" loading="lazy" /><span class="absolute bottom-3 left-3 rounded-full border border-white/50 bg-white/80 px-2.5 py-1 text-[10px] uppercase tracking-wider text-zinc-700 backdrop-blur">Preview</span></div>}
   <div class="p-5">
-    <h3 class="m-0 text-base font-semibold tracking-tight text-zinc-100">{title}</h3>
+    <h3 class="m-0 text-base font-semibold tracking-tight text-zinc-900">{title}</h3>
     {desc && <p class="mt-2 text-xs leading-5 text-zinc-500">{desc}</p>}
-    {prompts.length > 0 && <div class="mt-5 space-y-2">{prompts.map(([label, text]) => <div class="rounded-xl border border-white/8 bg-black/20 p-3"><div class="mb-2 flex items-center justify-between gap-2"><span class="text-[10px] font-semibold uppercase tracking-wider text-zinc-600">{label}</span><button class="copy-btn btn btn-ghost btn-xs h-6 min-h-0 px-2 text-zinc-500 hover:bg-white/10 hover:text-white" data-text={text} type="button">复制</button></div><code class="block break-words text-[11px] leading-5 text-zinc-300">{text}</code></div>)}</div>}
-    <div class="mt-4 border-t border-white/8 pt-4 text-xs leading-5 text-zinc-500"><slot /></div>
+    {prompts.length > 0 && <div class="mt-5 space-y-2">{prompts.map(([label, text]) => <div class="rounded-xl border border-zinc-900/10 bg-zinc-50 p-3"><div class="mb-2 flex items-center justify-between gap-2"><span class="text-[10px] font-semibold uppercase tracking-wider text-zinc-500">{label}</span><button class="copy-btn btn btn-ghost btn-xs h-6 min-h-0 px-2 text-zinc-500 hover:bg-zinc-200 hover:text-zinc-900" data-text={text} type="button">复制</button></div><code class="block break-words text-[11px] leading-5 text-zinc-700">{text}</code></div>)}</div>}
+    <div class="mt-4 border-t border-zinc-900/10 pt-4 text-xs leading-5 text-zinc-500"><slot /></div>
   </div>
 </article>
 <script>

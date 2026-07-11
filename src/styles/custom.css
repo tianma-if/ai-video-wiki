@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: night --default;
+  themes: light --default, dark --prefersdark;
 }
 
 @theme {
@@ -9,27 +9,27 @@
 }
 
 :root {
-  color-scheme: dark;
-  --ink: #f4f4f5;
-  --muted: #a1a1aa;
-  --line: rgba(255, 255, 255, 0.1);
-  --panel: #151518;
+  color-scheme: light;
+  --ink: #18181b;
+  --muted: #71717a;
+  --line: rgba(24, 24, 27, 0.12);
+  --panel: #ffffff;
 }
 
 html { scroll-behavior: smooth; }
 body {
   min-width: 320px;
-  background: #0d0d0f;
+  background: #f7f7f5;
   color: var(--ink);
-  background-image: radial-gradient(circle at 50% -10%, rgba(255,255,255,.07), transparent 36rem);
+  background-image: radial-gradient(circle at 50% -10%, rgba(255,255,255,.9), transparent 36rem);
 }
 
-::selection { background: #f4f4f5; color: #0d0d0f; }
+::selection { background: #18181b; color: #ffffff; }
 
 .prose-docs { max-width: none; }
 .prose-docs h2 { margin: 3.5rem 0 1.25rem; font-size: clamp(1.35rem, 2vw, 1.75rem); letter-spacing: -.03em; }
-.prose-docs h3 { margin: 1.25rem 0 .5rem; font-size: 1rem; font-weight: 600; color: #e4e4e7; }
-.prose-docs > p { color: #a1a1aa; line-height: 1.8; }
-.prose-docs ul { margin: .75rem 0 0; padding-left: 1.15rem; color: #a1a1aa; line-height: 1.8; }
-.prose-docs code { border: 1px solid var(--line); border-radius: .35rem; background: #1b1b20; padding: .1rem .35rem; font: .85em var(--font-mono); color: #e4e4e7; }
-.prose-docs em { color: #d4d4d8; }
+.prose-docs h3 { margin: 1.25rem 0 .5rem; font-size: 1rem; font-weight: 600; color: #27272a; }
+.prose-docs > p { color: #71717a; line-height: 1.8; }
+.prose-docs ul { margin: .75rem 0 0; padding-left: 1.15rem; color: #71717a; line-height: 1.8; }
+.prose-docs code { border: 1px solid var(--line); border-radius: .35rem; background: #ffffff; padding: .1rem .35rem; font: .85em var(--font-mono); color: #3f3f46; }
+.prose-docs em { color: #52525b; }
