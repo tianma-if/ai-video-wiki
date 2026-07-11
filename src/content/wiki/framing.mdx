@@ -1,0 +1,43 @@
+---
+title: "分镜设计"
+description: "通过特定的景别与构图提示词，精准约束 AI 生成的画面镜头裁切与人物占比。"
+---
+import Card from '../../components/Card.astro';
+import Grid from '../../components/Grid.astro';
+
+<Grid>
+  <Card 
+    title="特写 (Close-Up - CU)" 
+    desc="画面聚焦于人物肩部以上或单个物体，突出面部表情、眼神细节或微观动态。"
+    kling="Close-up shot of ... facial detail, eyes focus, shallow depth of field"
+    runway="Camera Close-Up, high detail on features"
+    luma="close up"
+    preview="/assets/previews/cyberpunk_preview.jpg"
+  >
+    * **修饰词**：`macro shot`, `shallow depth of field`, `blurry background`.
+    * **作用**：刻画角色心理情绪，强化细节表达。
+  </Card>
+
+  <Card 
+    title="全景与远景 (Full / Establishing Shot)" 
+    desc="展现主体全身、与周围环境的互动，或交代宏大的故事背景与世界观。"
+    kling="Wide establishing shot, cinematic panorama, epic scale"
+    runway="Camera Wide Angle, long shot"
+    luma="wide shot"
+    preview="/assets/previews/cyberpunk_preview.jpg"
+  >
+    * **修饰词** : `establishing shot`, `wide-angle lens`, `scenic overview`, `epic landscape`.
+    * **作用**：塑造空间感、开场背景介绍、描绘壮观的自然/城市景象。
+  </Card>
+
+  <Card 
+    title="俯瞰/上帝视角 (Bird's Eye View)" 
+    desc="镜头垂直向下拍摄，具有强烈的排版感和极高维度的视觉审视力。"
+    kling="Top-down shot, bird's eye view, aerial photography"
+    runway="Camera Top-down view, drone perspective"
+    luma="drone shot, top down"
+    preview="/assets/previews/cyberpunk_preview.jpg"
+  >
+    * **作用**：展示道路、人群、建筑的几何美感或交代迷失感。
+  </Card>
+</Grid>
