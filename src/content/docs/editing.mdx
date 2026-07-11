@@ -12,8 +12,8 @@ import Grid from '../../components/Grid.astro';
   <Card 
     title="无缝物理转场 (Seamless Transitions)" 
     desc="利用前一镜头的物理运动（如快速摇镜头、黑场遮挡）作为后一镜头的切入，实现无痕切换。"
-    kling="[镜头A结尾] camera pans right fast, motion blur. [镜头B开头] camera pans right, revealing..."
-    runway="fast camera pan movement transition, motion blur, match cut"
+    prompt="[镜头A结尾] camera pans right fast, motion blur. [镜头B开头] camera pans right, revealing..."
+    promptVariant="fast camera pan movement transition, motion blur, match cut"
   >
     * **核心机理**：利用运动模糊（Motion Blur）或光影匹配（Match Cut），省去生硬的数字化后期特效转场。
   </Card>
@@ -22,7 +22,7 @@ import Grid from '../../components/Grid.astro';
   <Card 
     title="面部闪烁修复 (Face Flicker Fix)" 
     desc="解决 AI 视频在连续帧中脸部五官变形、眼球闪动与细节丢失的常见顽疾。"
-    sd="工作流建议：1. 导出原视频帧 2. 使用 SD WebUI + ControlNet Tile/Ip-Adapter 进行局部图生图面部重绘 3. 重新合并回视频"
+    workflow="工作流建议：1. 导出原视频帧 2. 使用 SD WebUI + ControlNet Tile/Ip-Adapter 进行局部图生图面部重绘 3. 重新合并回视频"
   >
     * **工具链**：Stable Diffusion (ControlNet/Inpaint) 或专用 AI 面部恢复工具（如 GPEN / GFPGAN / LivePortrait）。
   </Card>

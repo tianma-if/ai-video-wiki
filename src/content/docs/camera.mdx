@@ -12,9 +12,9 @@ import Grid from '../../components/Grid.astro';
   <Card 
     title="推镜头 (Zoom In / Dolly In)" 
     desc="焦距变长或摄像头向前移动，引导观众视觉焦点，增强情绪张力。"
-    kling="Zoom In / dolly in, camera moves forward slowly"
-    runway="Camera: Zoom In / Dolly In"
-    luma="zoom in"
+    prompt="Zoom In / dolly in, camera moves forward slowly"
+    promptVariant="Camera: Zoom In / Dolly In"
+    promptDetail="zoom in"
     preview="/assets/previews/cyberpunk_preview.jpg"
   >
     * **适用场景**：人物情绪特写、关键细节提示。
@@ -25,9 +25,9 @@ import Grid from '../../components/Grid.astro';
   <Card 
     title="拉镜头 (Zoom Out / Dolly Out)" 
     desc="焦距变短或摄像头后移，逐渐展示更广阔的环境，常用于悬念揭晓或结尾。"
-    kling="Zoom Out / dolly out, camera moves backward slowly"
-    runway="Camera: Zoom Out / Dolly Out"
-    luma="zoom out"
+    prompt="Zoom Out / dolly out, camera moves backward slowly"
+    promptVariant="Camera: Zoom Out / Dolly Out"
+    promptDetail="zoom out"
     preview="/assets/previews/cyberpunk_preview.jpg"
   >
     * **适用场景**：交代主体与大环境的关系、视频尾声收尾。
@@ -37,9 +37,9 @@ import Grid from '../../components/Grid.astro';
   <Card 
     title="摇镜头 (Pan - Left/Right)" 
     desc="摄像机机位不动，镜头向左或向右水平转动扫掠画面。"
-    kling="pan left / pan right, horizontal scanning camera"
-    runway="Camera: Pan Left / Pan Right"
-    luma="pan left"
+    prompt="pan left / pan right, horizontal scanning camera"
+    promptVariant="Camera: Pan Left / Pan Right"
+    promptDetail="pan left"
     preview="/assets/previews/cyberpunk_preview.jpg"
   >
     * **适用场景**：扫视环境、交代空间布局、跟随移动主体。
@@ -49,9 +49,9 @@ import Grid from '../../components/Grid.astro';
   <Card 
     title="移镜头 (Track / Truck)" 
     desc="摄像机在空间中平行向左或向右匀速滑移拍摄。"
-    kling="tracking shot, camera moves horizontally to the left/right"
-    runway="Camera: Pan Left/Right (搭配较高运动强度)"
-    luma="truck right"
+    prompt="tracking shot, camera moves horizontally to the left/right"
+    promptVariant="Camera: Pan Left/Right (搭配较高运动强度)"
+    promptDetail="truck right"
     preview="/assets/previews/cyberpunk_preview.jpg"
   >
     * **适用场景**：展现与主体的平行行进感，适合跑步、散步场景。
@@ -61,9 +61,9 @@ import Grid from '../../components/Grid.astro';
   <Card 
     title="俯仰镜头 (Tilt - Up/Down)" 
     desc="摄像机机位固定，镜头向上仰或向下俯转动拍摄。"
-    kling="tilt up / tilt down, camera tilts up slowly"
-    runway="Camera: Tilt Up / Tilt Down"
-    luma="tilt down"
+    prompt="tilt up / tilt down, camera tilts up slowly"
+    promptVariant="Camera: Tilt Up / Tilt Down"
+    promptDetail="tilt down"
     preview="/assets/previews/cyberpunk_preview.jpg"
   >
     * **适用场景**：由脚向头扫描展示人物，或从地面扫描到高耸的建筑物。
@@ -77,9 +77,9 @@ import Grid from '../../components/Grid.astro';
   <Card 
     title="环绕运镜 (Orbit - 360°)" 
     desc="以主体为圆心，摄像机做圆周环绕移动拍摄，具有极强的故事感与仪式感。"
-    kling="360-degree orbit shot, camera orbits around the subject"
-    runway="Camera: Orbit"
-    luma="orbit left"
+    prompt="360-degree orbit shot, camera orbits around the subject"
+    promptVariant="Camera: Orbit"
+    promptDetail="orbit left"
     preview="/assets/previews/cyberpunk_preview.jpg"
   >
     * **适用场景**：关键人物觉醒、战争环视、高光时刻。
@@ -89,9 +89,9 @@ import Grid from '../../components/Grid.astro';
   <Card 
     title="升降镜头 (Crane / Jib)" 
     desc="机位垂直上升或垂直下降拍摄，带来强烈的视点转换。"
-    kling="crane shot, camera moves vertically up/down"
-    runway="Camera: Elevate Up / Down"
-    luma="crane up"
+    prompt="crane shot, camera moves vertically up/down"
+    promptVariant="Camera: Elevate Up / Down"
+    promptDetail="crane up"
     preview="/assets/previews/cyberpunk_preview.jpg"
   >
     * **适用场景**：从地面近景平滑升起展示宏大远景，反之亦然。
@@ -101,9 +101,9 @@ import Grid from '../../components/Grid.astro';
   <Card 
     title="希区柯克变焦 (Dolly Zoom)" 
     desc="机位前移的同时进行后变焦（或反之），使主体大小不变，背景产生视觉纵深剧烈变化。"
-    kling="dolly zoom, background perspective distortion"
-    runway="Camera: Dolly In + Zoom Out (需在控制端做相反操作)"
-    luma="dolly zoom"
+    prompt="dolly zoom, background perspective distortion"
+    promptVariant="Camera: Dolly In + Zoom Out (需在控制端做相反操作)"
+    promptDetail="dolly zoom"
     preview="/assets/previews/cyberpunk_preview.jpg"
   >
     * **适用场景**：惊恐、眩晕、大彻大悟等心理冲击瞬间。
@@ -113,9 +113,9 @@ import Grid from '../../components/Grid.astro';
   <Card 
     title="手持/晃动镜头 (Handheld Shaky)" 
     desc="模拟人工手持镜头的轻微晃动，增加画面的真实感、临场感与动感。"
-    kling="handheld camera, shaky footage, realistic camera motion"
-    runway="Motion setting: high, handheld camera style"
-    luma="shaky camera"
+    prompt="handheld camera, shaky footage, realistic camera motion"
+    promptVariant="Motion setting: high, handheld camera style"
+    promptDetail="shaky camera"
     preview="/assets/previews/cyberpunk_preview.jpg"
   >
     * **适用场景**：纪录片质感、动作片格斗、灾难发生、主观奔跑。
@@ -125,9 +125,9 @@ import Grid from '../../components/Grid.astro';
   <Card 
     title="穿越机航拍 (FPV Drone)" 
     desc="大范围的高速俯冲、翻滚或低空穿梭，展现极限运动般的高动态视觉冲击。"
-    kling="FPV drone shot, fast fly-through, high speed dynamic camera"
-    runway="Camera: Fast motion, drone fly-through"
-    luma="FPV drone shot"
+    prompt="FPV drone shot, fast fly-through, high speed dynamic camera"
+    promptVariant="Camera: Fast motion, drone fly-through"
+    promptDetail="FPV drone shot"
     preview="/assets/previews/cyberpunk_preview.jpg"
   >
     * **适用场景**：跑车拉力赛、山川航拍、丛林穿梭。

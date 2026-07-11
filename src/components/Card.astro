@@ -1,8 +1,8 @@
 ---
-interface Props { title: string; desc?: string; kling?: string; runway?: string; luma?: string; midjourney?: string; sd?: string; preview?: string; previewStatic?: string; }
-const { title, desc, kling, runway, luma, midjourney, sd, preview, previewStatic } = Astro.props;
+interface Props { title: string; desc?: string; prompt?: string; promptVariant?: string; promptDetail?: string; workflow?: string; preview?: string; previewStatic?: string; }
+const { title, desc, prompt, promptVariant, promptDetail, workflow, preview, previewStatic } = Astro.props;
 const prompts = [
-  ['Kling', kling], ['Runway', runway], ['Luma', luma], ['Midjourney / SD', midjourney], ['Prompt Modifiers', sd],
+  ['Prompt', prompt], ['Prompt variant', promptVariant], ['Prompt detail', promptDetail], ['Workflow', workflow],
 ].filter((item): item is [string, string] => Boolean(item[1]));
 ---
 <article class="group overflow-hidden rounded-2xl border border-zinc-900/10 bg-white transition duration-300 hover:-translate-y-1 hover:border-zinc-900/25 hover:shadow-lg">
