@@ -1,0 +1,72 @@
+---
+import SEO from '../components/SEO.astro';
+import '../styles/custom.css';
+
+interface Props { title?: string; description?: string; active?: string; }
+const { title, description, active } = Astro.props;
+const categories = [
+  { id: 'topic', label: '选题与策划', short: '选题' },
+  { id: 'narrative', label: '叙事与脚本', short: '叙事' },
+  { id: 'framing', label: '分镜设计', short: '分镜' },
+  { id: 'camera', label: '运镜控制', short: '运镜' },
+  { id: 'editing', label: '剪辑与后期', short: '剪辑' },
+  { id: 'voiceover', label: '配音与音效', short: '声音' },
+];
+---
+<!doctype html>
+<html lang="zh-CN" data-theme="night">
+  <head><SEO title={title} description={description} /></head>
+  <body>
+    <header class="sticky top-0 z-40 border-b border-white/10 bg-[#0d0d0f]/85 backdrop-blur-xl">
+      <div class="mx-auto flex h-16 max-w-[1440px] items-center gap-4 px-5 lg:px-8">
+        <a href="/" class="group flex min-w-fit items-center gap-3" aria-label="返回首页">
+          <span class="grid size-8 place-items-center rounded-lg bg-white text-sm font-black text-black transition-transform group-hover:rotate-6">AV</span>
+          <span class="hidden text-sm font-semibold tracking-tight sm:block">AI Video Hints</span>
+        </a>
+        <nav class="hidden flex-1 items-center justify-center gap-1 lg:flex" aria-label="主导航">
+          {categories.map((category) => (
+            <a href={`/${category.id}`} class:list={["rounded-lg px-3 py-2 text-sm transition-colors hover:bg-white/8 hover:text-white", active === category.id ? "bg-white/10 text-white" : "text-zinc-500"]}>{category.short}</a>
+          ))}
+        </nav>
+        <div class="ml-auto flex items-center gap-2">
+          <label class="hidden items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-zinc-500 focus-within:border-white/25 sm:flex">
+            <span class="text-xs">⌕</span><input id="doc-search" class="w-28 bg-transparent text-xs text-white outline-none placeholder:text-zinc-600" placeholder="搜索分类..." aria-label="搜索分类" />
+          </label>
+          <a class="btn btn-ghost btn-sm hidden text-zinc-400 hover:text-white sm:inline-flex" href="https://github.com/tianma-if/ai-video-hints" target="_blank" rel="noreferrer">GitHub ↗</a>
+          <div class="dropdown dropdown-end lg:hidden">
+            <button class="btn btn-ghost btn-sm" aria-label="打开导航">菜单</button>
+            <ul class="menu dropdown-content z-50 mt-3 w-52 rounded-box border border-white/10 bg-[#19191d] p-2 shadow-2xl">
+              {categories.map((category) => <li><a href={`/${category.id}`}>{category.label}</a></li>)}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="mx-auto grid max-w-[1440px] grid-cols-1 gap-10 px-5 py-10 lg:grid-cols-[220px_minmax(0,1fr)] lg:px-8">
+      <aside class="hidden lg:block">
+        <div class="sticky top-24">
+          <p class="mb-4 px-3 text-[11px] font-semibold uppercase tracking-[.2em] text-zinc-600">速查分类</p>
+          <nav class="space-y-1" aria-label="文档分类">
+            {categories.map((category, index) => <a href={`/${category.id}`} class:list={["group flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm transition", active === category.id ? "bg-white text-black" : "text-zinc-500 hover:bg-white/6 hover:text-zinc-200"]}><span class:list={["font-mono text-[10px]", active === category.id ? "text-black/50" : "text-zinc-700 group-hover:text-zinc-500"]}>{String(index + 1).padStart(2, '0')}</span>{category.label}</a>)}
+          </nav>
+          <div class="mt-10 rounded-2xl border border-white/10 bg-white/[.03] p-4">
+            <p class="text-xs font-semibold text-zinc-300">开源共建</p>
+            <p class="mt-2 text-xs leading-5 text-zinc-600">发现更好用的 Prompt？欢迎提交 PR，一起完善这份创作者词典。</p>
+            <a href="https://github.com/tianma-if/ai-video-hints" target="_blank" rel="noreferrer" class="mt-3 inline-block text-xs text-zinc-300 underline decoration-white/20 underline-offset-4 hover:text-white">贡献内容 ↗</a>
+          </div>
+        </div>
+      </aside>
+      <div class="min-w-0"><slot /></div>
+    </main>
+    <footer class="mx-auto flex max-w-[1440px] items-center justify-between border-t border-white/10 px-5 py-8 text-xs text-zinc-600 lg:px-8"><span>AI Video Hints · 开源提示词速查</span><span>Built with Astro</span></footer>
+    <script>
+      const search = document.querySelector('#doc-search');
+      search?.addEventListener('input', (event) => {
+        const value = event.target.value.toLowerCase().trim();
+        document.querySelectorAll('nav[aria-label="文档分类"] a').forEach((link) => {
+          link.classList.toggle('hidden', value !== '' && !link.textContent.toLowerCase().includes(value));
+        });
+      });
+    </script>
+  </body>
+</html>

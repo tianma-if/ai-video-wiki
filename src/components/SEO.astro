@@ -2,45 +2,20 @@
 interface Props {
   title?: string;
   description?: string;
-  image?: string;
-  canonicalURL?: string;
 }
-
 const {
-  title = "AI 视频速查卡 - 极简 AI 视频提示词备忘录",
-  description = "免费开源的 AI 视频速查卡，提供选题、叙事、分镜、运镜、剪辑、配音等小分类卡片式 Prompt 指令与最佳实践，支持一键复制与运镜效果直观预览。",
-  image = "/assets/og-image.png",
-  canonicalURL = new URL(Astro.url.pathname, Astro.site || Astro.url.origin).href,
+  title = 'AI 视频速查卡',
+  description = '开源、轻量、高密度的 AI 视频创作提示词速查工具。',
 } = Astro.props;
-
-const siteTitle = title.includes("AI 视频速查卡") ? title : `${title} | AI 视频速查卡 (AI Video Hints)`;
+const siteTitle = title === 'AI 视频速查卡' ? title : `${title} | AI 视频速查卡`;
+const canonical = new URL(Astro.url.pathname, Astro.site || Astro.url.origin).href;
 ---
-
-<!-- Global Metadata -->
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="icon" href="/favicon.ico" />
-<meta name="generator" content={Astro.generator} />
-
-<!-- Canonical URL -->
-<link rel="canonical" href={canonicalURL} />
-
-<!-- Primary Meta Tags -->
+<meta name="viewport" content="width=device-width" />
+<link rel="icon" href="/favicon.svg" />
+<link rel="canonical" href={canonical} />
 <title>{siteTitle}</title>
-<meta name="title" content={siteTitle} />
 <meta name="description" content={description} />
-
-<!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
-<meta property="og:url" content={canonicalURL} />
 <meta property="og:title" content={siteTitle} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image, Astro.url.origin)} />
-
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={canonicalURL} />
-<meta property="twitter:title" content={siteTitle} />
-<meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image, Astro.url.origin)} />
