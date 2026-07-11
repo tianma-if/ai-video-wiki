@@ -1,0 +1,114 @@
+---
+import type { Props } from '@astrojs/starlight/props';
+
+import Search from '@astrojs/starlight/components/Search.astro';
+import ThemeSelect from '@astrojs/starlight/components/ThemeSelect.astro';
+import SocialIcons from '@astrojs/starlight/components/SocialIcons.astro';
+import SiteTitle from '@astrojs/starlight/components/SiteTitle.astro';
+
+const currentPath = Astro.url.pathname;
+
+const categories = [
+  { id: 'topic', name: '选题与策划', shortName: '选题', path: '/topic' },
+  { id: 'narrative', name: '叙事与脚本', shortName: '剧本', path: '/narrative' },
+  { id: 'framing', name: '分镜设计', shortName: '分镜', path: '/framing' },
+  { id: 'camera', name: '运镜控制', shortName: '运镜', path: '/camera' },
+  { id: 'editing', name: '剪辑与后期', shortName: '剪辑', path: '/editing' },
+  { id: 'voiceover', name: '配音与音效', shortName: '配音', path: '/voiceover' },
+];
+---
+
+<div class="header sl-flex">
+  <div class="header-left sl-flex">
+    <SiteTitle {...Astro.props} />
+    <nav class="header-nav">
+      {categories.map(cat => {
+        const isActive = currentPath === cat.path || currentPath === `${cat.path}/`;
+        return (
+          <a 
+            href={cat.path} 
+            class={`nav-link ${isActive ? 'active' : ''}`}
+          >
+            {cat.shortName}
+          </a>
+        );
+      })}
+    </nav>
+  </div>
+  
+  <div class="header-right sl-flex">
+    <div class="search-box-wrapper">
+      <Search {...Astro.props} />
+    </div>
+    <div class="settings-group sl-flex">
+      <ThemeSelect {...Astro.props} />
+      <SocialIcons {...Astro.props} />
+    </div>
+  </div>
+</div>
+
+<style>
+  .header {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+
+  .header-left {
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .header-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .nav-link {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--sl-color-text-muted);
+    text-decoration: none;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    transition: all 0.15s ease;
+  }
+
+  .nav-link:hover {
+    color: var(--sl-color-text);
+    background-color: var(--sl-color-bg-sidebar);
+  }
+
+  .nav-link.active {
+    color: var(--sl-color-text);
+    background-color: var(--sl-color-bg-sidebar);
+    font-weight: 600;
+  }
+
+  .header-right {
+    align-items: center;
+    gap: 1.5rem;
+    flex-grow: 1;
+    justify-content: flex-end;
+  }
+
+  .search-box-wrapper {
+    flex-grow: 1;
+    max-width: 320px;
+  }
+
+  .settings-group {
+    align-items: center;
+    gap: 1rem;
+  }
+
+  /* Hide horizontal top nav on mobile screens and let Starlight's default drawer handle it */
+  @media (max-width: 768px) {
+    .header-nav {
+      display: none;
+    }
+  }
+</style>
