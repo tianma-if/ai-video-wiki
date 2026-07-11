@@ -8,6 +8,12 @@ astro dev --background
 
 Manage the background server with `astro dev stop`, `astro dev status`, and `astro dev logs`.
 
+## Git
+
+- 禁止擅自创建新分支。
+- 默认必须在当前分支提交并推送代码。
+- 只有用户明确要求创建或切换分支时，才允许执行相关操作。
+
 ## Documentation
 
 Full documentation: https://docs.astro.build
