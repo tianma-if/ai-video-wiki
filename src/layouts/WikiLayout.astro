@@ -11,12 +11,12 @@ const { title, description, headings = [] } = Astro.props;
 
 // List of all categories for sidebar navigation
 const categories = [
-  { id: 'topic', name: '选题与策划', path: '/wiki/topic' },
-  { id: 'narrative', name: '叙事与脚本', path: '/wiki/narrative' },
-  { id: 'framing', name: '分镜设计', path: '/wiki/framing' },
-  { id: 'camera', name: '运镜控制', path: '/wiki/camera' },
-  { id: 'editing', name: '剪辑与后期', path: '/wiki/editing' },
-  { id: 'voiceover', name: '配音与音效', path: '/wiki/voiceover' },
+  { id: 'topic', name: '选题与策划', shortName: '选题', path: '/wiki/topic' },
+  { id: 'narrative', name: '叙事与脚本', shortName: '剧本', path: '/wiki/narrative' },
+  { id: 'framing', name: '分镜设计', shortName: '分镜', path: '/wiki/framing' },
+  { id: 'camera', name: '运镜控制', shortName: '运镜', path: '/wiki/camera' },
+  { id: 'editing', name: '剪辑与后期', shortName: '剪辑', path: '/wiki/editing' },
+  { id: 'voiceover', name: '配音与音效', shortName: '配音', path: '/wiki/voiceover' },
 ];
 
 const currentPath = Astro.url.pathname;
@@ -37,6 +37,16 @@ const currentPath = Astro.url.pathname;
             <span class="logo-text">AI Video Hints</span>
             <span class="logo-badge">开源速查</span>
           </a>
+          <nav class="header-nav">
+            {categories.map(cat => (
+              <a 
+                href={cat.path} 
+                class={`nav-link ${currentPath.includes(cat.path) ? 'active' : ''}`}
+              >
+                {cat.shortName}
+              </a>
+            ))}
+          </nav>
         </div>
         <div class="header-center">
           <div class="search-wrapper">
@@ -212,6 +222,39 @@ const currentPath = Astro.url.pathname;
     position: sticky;
     top: 0;
     z-index: 100;
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .header-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .nav-link {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    transition: all 0.15s ease;
+  }
+
+  .nav-link:hover {
+    color: var(--text-primary);
+    background-color: var(--border-color);
+  }
+
+  .nav-link.active {
+    color: var(--text-primary);
+    background-color: var(--border-color);
+    font-weight: 600;
   }
 
   .logo {

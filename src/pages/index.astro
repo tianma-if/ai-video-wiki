@@ -20,9 +20,19 @@ const categories = [
     <div class="container">
       <!-- Header -->
       <header class="main-header">
-        <div class="logo">
-          <span class="logo-emoji">🎬</span>
-          <span class="logo-text">AI Video Hints</span>
+        <div class="header-left">
+          <a href="/" class="logo">
+            <span class="logo-emoji">🎬</span>
+            <span class="logo-text">AI Video Hints</span>
+          </a>
+          <nav class="header-nav">
+            <a href="/wiki/topic" class="nav-link">选题</a>
+            <a href="/wiki/narrative" class="nav-link">剧本</a>
+            <a href="/wiki/framing" class="nav-link">分镜</a>
+            <a href="/wiki/camera" class="nav-link">运镜</a>
+            <a href="/wiki/editing" class="nav-link">剪辑</a>
+            <a href="/wiki/voiceover" class="nav-link">配音</a>
+          </nav>
         </div>
         <div class="header-right">
           <a href="https://github.com" target="_blank" class="github-btn" rel="noopener noreferrer">
@@ -159,10 +169,38 @@ const categories = [
     border-bottom: 1px solid #e4e4e7;
   }
 
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .header-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .nav-link {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #71717a;
+    text-decoration: none;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    transition: all 0.15s ease;
+  }
+
+  .nav-link:hover {
+    color: #09090b;
+    background-color: #f4f4f5;
+  }
+
   .logo {
     display: flex;
     align-items: center;
     gap: 0.6rem;
+    text-decoration: none;
   }
 
   .logo-emoji {
