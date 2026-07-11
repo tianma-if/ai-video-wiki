@@ -1,0 +1,9 @@
+:root {
+  /* Map AI Video Hints component variables to Starlight design tokens */
+  --bg-base: var(--sl-color-bg);
+  --bg-surface: var(--sl-color-bg-sidebar);
+  --border-color: var(--sl-color-hairline);
+  --text-primary: var(--sl-color-text);
+  --text-secondary: var(--sl-color-text-muted);
+  --text-muted: var(--sl-color-text-muted);
+}

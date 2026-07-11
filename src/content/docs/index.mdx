@@ -1,0 +1,66 @@
+---
+title: AI Video Hints
+description: 开源、轻量、高密度的 AI 视频创作提示词速查卡。
+template: splash
+hero:
+  tagline: 开源、轻量、高密度的 AI 视频创作提示词速查卡
+  image:
+    file: ../../assets/astro.svg
+  actions:
+    - text: 开始速查
+      link: /camera
+      icon: right-arrow
+      variant: primary
+    - text: GitHub 仓库
+      link: https://github.com/tianma-if/ai-video-hints
+      icon: external
+      variant: minimal
+---
+import Card from '../../components/Card.astro';
+import Grid from '../../components/Grid.astro';
+
+## 常用热门词条
+
+<Grid>
+  <Card 
+    title="希区柯克变焦 (Dolly Zoom)" 
+    desc="通过相反方向的推拉镜头与变焦形成强烈的空间扭曲感与角色内心紧张感。"
+    kling="Dolly zoom, camera moves forward while zooming out, dramatic background compression, cinematic depth of field."
+    runway="Camera: Dolly Zoom (Zoom Out while moving forward)"
+    luma="dolly zoom out"
+    preview="/assets/previews/cyberpunk_preview.jpg"
+  >
+    * **适用场景**：发现惊人秘密、角色大彻大悟等心理冲击瞬间。
+  </Card>
+
+  <Card 
+    title="无缝物理转场 (Seamless Transitions)" 
+    desc="利用前一镜头的物理运动（如快速摇镜头、黑场）作为后一镜头的切入实现无缝过渡。"
+    kling="Seamless whip pan transition, camera pans fast to the right, motion blur, cut to a new scene panning in from the left."
+    runway="Camera: Pan Right fast, whip pan, high motion blur transition"
+    preview="/assets/previews/cyberpunk_preview.jpg"
+  >
+    * **适用场景**：空间快速移动、动作蒙太奇剪辑。
+  </Card>
+
+  <Card 
+    title="黄金 3 秒强吸睛开头 (Hooks)" 
+    desc="快速制造悬念与情绪反差，大幅提高短视频的完播率与转化率。"
+    kling="用极度反常的动作或情绪冲突开头，例如：第一句旁白为：‘这是我这辈子做过最荒谬的决定...’"
+    runway="以微观细节特写或急速镜头拉出开始，第一句旁白：‘千万别点开这个视频，除非你想...’"
+    preview="/assets/previews/cyberpunk_preview.jpg"
+  >
+    * **适用场景**：短视频、自媒体视频的黄金前3秒。
+  </Card>
+
+  <Card 
+    title="上帝视角/垂直俯瞰 (Bird's Eye View)" 
+    desc="从垂直向下 90 度的俯视角度拍摄，展现角色的渺小、孤独或空间的对称构图。"
+    kling="Top-down bird's-eye view, vertical camera facing straight down, symmetrical composition, cinematic scale."
+    runway="Camera: Top-down vertical bird's-eye view, high altitude static shot"
+    luma="bird's eye view, top-down"
+    preview="/assets/previews/cyberpunk_preview.jpg"
+  >
+    * **适用场景**：展现城市几何美感、自然空镜。
+  </Card>
+</Grid>
