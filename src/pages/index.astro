@@ -1,5 +1,7 @@
 ---
 import SEO from '../components/SEO.astro';
+import Card from '../components/Card.astro';
+import Grid from '../components/Grid.astro';
 
 const categories = [
   { id: 'topic', name: '选题与策划', icon: '💡', desc: '爆款选题公式、情绪共鸣标签与科普结构脚本生成提示词。', path: '/wiki/topic', count: '5 个词条' },
@@ -57,27 +59,64 @@ const categories = [
         </div>
       </section>
 
-      <!-- Categories Grid -->
+      <!-- Featured Prompts Section -->
       <section class="categories-section">
-        <h2 class="section-title">按类别检索</h2>
-        <div class="categories-grid">
-          {categories.map(cat => (
-            <a href={cat.path} class="category-card">
-              <div class="card-glow"></div>
-              <div class="card-content">
-                <div class="card-header">
-                  <span class="cat-icon">{cat.icon}</span>
-                  <span class="cat-count">{cat.count}</span>
-                </div>
-                <h3>{cat.name}</h3>
-                <p>{cat.desc}</p>
-                <div class="card-footer">
-                  <span class="explore-btn">浏览词条 ➔</span>
-                </div>
-              </div>
-            </a>
-          ))}
-        </div>
+        <h2 class="section-title">常用热门词条</h2>
+        <Grid>
+          <Card 
+            title="希区柯克变焦 (Dolly Zoom)" 
+            desc="通过相反方向的推拉镜头与变焦形成强烈的空间扭曲感与角色内心紧张感。"
+            kling="Dolly zoom, camera moves forward while zooming out, dramatic background compression, cinematic depth of field."
+            runway="Camera: Dolly Zoom (Zoom Out while moving forward)"
+            luma="dolly zoom out"
+            preview="/assets/previews/cyberpunk_preview.jpg"
+          >
+            <ul>
+              <li><strong>适用场景</strong>：发现惊人秘密、角色陷入极度震惊、高潮惊悚时刻。</li>
+              <li><strong>技巧</strong>：确保背景有纵深物（如长廊、长街），视觉扭曲效果最明显。</li>
+            </ul>
+          </Card>
+
+          <Card 
+            title="无缝物理转场 (Seamless Transitions)" 
+            desc="通过快甩镜头（Whip Pan）或高速动态模糊实现极其自然的画面过渡。"
+            kling="Seamless whip pan transition, camera pans fast to the right, motion blur, cut to a new scene panning in from the left."
+            runway="Camera: Pan Right fast, whip pan, high motion blur transition"
+            preview="/assets/previews/cyberpunk_preview.jpg"
+          >
+            <ul>
+              <li><strong>适用场景</strong>：空间连续移动、快节奏动作剪辑、场景无缝变换。</li>
+              <li><strong>技巧</strong>：前镜头的出画方向与后镜头的入画方向必须一致，AI 生成衔接度最高。</li>
+            </ul>
+          </Card>
+
+          <Card 
+            title="黄金 3 秒强吸睛开头 (Hooks)" 
+            desc="快速制造悬念与情绪反差，大幅提高短视频的完播率与转化率。"
+            kling="用极度反常的动作或情绪冲突开头，例如：第一句旁白为：‘这是我这辈子做过最荒谬的决定...’"
+            runway="以微观细节特写或急速镜头拉出开始，第一句旁白：‘千万别点开这个视频，除非你想...’"
+            preview="/assets/previews/cyberpunk_preview.jpg"
+          >
+            <ul>
+              <li><strong>适用场景</strong>：知识科普、故事解说、产品推介等视频的开头黄金阶段。</li>
+              <li><strong>技巧</strong>：前3秒的视觉冲击力（强运镜/特写）与旁白声效（Hook）需要高度同步。</li>
+            </ul>
+          </Card>
+
+          <Card 
+            title="上帝视角/垂直俯瞰 (Bird's Eye View)" 
+            desc="从垂直向下 90 度的俯视角度拍摄，展现角色的渺小、孤独或空间的对称构图。"
+            kling="Top-down bird's-eye view, vertical camera facing straight down, symmetrical composition, cinematic scale."
+            runway="Camera: Top-down vertical bird's-eye view, high altitude static shot"
+            luma="bird's eye view, top-down"
+            preview="/assets/previews/cyberpunk_preview.jpg"
+          >
+            <ul>
+              <li><strong>适用场景</strong>：空旷城市街道、森林包围、沙滩海岸线、大场景对称构图。</li>
+              <li><strong>技巧</strong>：可加入微弱的旋转或拉镜头以增加画面生动感。</li>
+            </ul>
+          </Card>
+        </Grid>
       </section>
 
       <!-- Footer -->

@@ -65,21 +65,6 @@ const currentPath = Astro.url.pathname;
 
       <!-- Main Layout Body -->
       <div class="layout-main">
-        <!-- Sidebar Left (Sticky categories) -->
-        <aside class="sidebar-left">
-          <div class="sidebar-title">速查分类</div>
-          <nav class="category-nav">
-            {categories.map(c => {
-              const isActive = currentPath === c.path || currentPath === `${c.path}/`;
-              return (
-                <a href={c.path} class={`nav-item ${isActive ? 'active' : ''}`}>
-                  <span class="bullet"></span>
-                  <span class="nav-text">{c.name}</span>
-                </a>
-              );
-            })}
-          </nav>
-        </aside>
 
         <!-- Center Content Area -->
         <main class="content-wrapper">
