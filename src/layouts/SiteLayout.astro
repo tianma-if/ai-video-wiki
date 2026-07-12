@@ -15,15 +15,46 @@ const categories = [
   { id: 'voiceover', label: '配音与音效', short: '声音' },
 ];
 const subNavigation: Record<string, { label: string; href: string }[]> = {
-  topic: [{ label: '选题与策划机制', href: '#topic-overview' }],
-  narrative: [{ label: '经典剧本结构', href: '#narrative-overview' }],
-  framing: [{ label: '景别与构图', href: '#framing-overview' }],
+  topic: [
+    { label: '选题与策划机制', href: '#topic-overview' },
+    { label: '爆款黄金开头', href: '#topic-hooks' },
+    { label: '情绪驱动模式', href: '#topic-emotional-drivers' },
+  ],
+  narrative: [
+    { label: '经典剧本结构', href: '#narrative-overview' },
+    { label: '三幕式结构', href: '#narrative-three-act' },
+    { label: '英雄之旅模型', href: '#narrative-heros-journey' },
+  ],
+  framing: [
+    { label: '景别与构图', href: '#framing-overview' },
+    { label: '特写', href: '#framing-close-up' },
+    { label: '全景与远景', href: '#framing-wide-shot' },
+    { label: '俯瞰 / 上帝视角', href: '#framing-birds-eye' },
+  ],
   camera: [
     { label: '基础运镜', href: '#camera-basic' },
+    { label: '推镜头', href: '#camera-zoom-in' },
+    { label: '拉镜头', href: '#camera-zoom-out' },
+    { label: '摇镜头', href: '#camera-pan' },
+    { label: '移镜头', href: '#camera-track' },
+    { label: '俯仰镜头', href: '#camera-tilt' },
     { label: '创意运镜', href: '#camera-creative' },
+    { label: '环绕运镜', href: '#camera-orbit' },
+    { label: '升降镜头', href: '#camera-crane' },
+    { label: '希区柯克变焦', href: '#camera-dolly-zoom' },
+    { label: '手持 / 晃动镜头', href: '#camera-handheld' },
+    { label: '穿越机航拍', href: '#camera-fpv' },
   ],
-  editing: [{ label: '后期与剪辑优化', href: '#editing-overview' }],
-  voiceover: [{ label: '声音与音轨设计', href: '#voiceover-overview' }],
+  editing: [
+    { label: '后期与剪辑优化', href: '#editing-overview' },
+    { label: '无缝物理转场', href: '#editing-seamless-transitions' },
+    { label: '面部闪烁修复', href: '#editing-face-flicker' },
+  ],
+  voiceover: [
+    { label: '声音与音轨设计', href: '#voiceover-overview' },
+    { label: '旁白播音提示词', href: '#voiceover-narrator' },
+    { label: '背景音乐风格', href: '#voiceover-bgm' },
+  ],
 };
 const currentSubNavigation = active ? subNavigation[active] ?? [] : [];
 ---
