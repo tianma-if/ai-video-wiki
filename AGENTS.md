@@ -1,28 +1,37 @@
-## Development
+# AGENTS.md
 
-When starting the dev server, use background mode:
+本文件用于约束和指导参与本项目的 AI 代理与协作者。除非用户明确给出更高优先级的指令，否则应遵守以下规则。
 
+## 项目背景与技术栈
+
+涉及本项目的背景、定位、部署信息与技术栈说明时，请优先参考 `README.md`。
+
+## Git 分支约束
+
+严禁创建新的 Git 分支；所有修改、提交和推送都必须直接在 `main` 分支上完成。
+
+## 组件复用与造轮子约束
+
+UI 功能应尽量复用 `shadcn/ui` 等现有 UI 组件。在实现其他功能时，也应优先采用成熟、稳定的开源组件或库，绝对禁止在没有充分必要性的前提下自行从零造轮子。
+
+为方便代码维护，当页面或功能模块出现复杂结构、重复布局或潜在复用场景时，应视情况封装为独立组件，保持页面入口聚焦于组合与数据传递。
+
+## 开发
+
+启动开发服务器时使用后台模式：
+
+```bash
+npx astro dev --background
 ```
-astro dev --background
+
+可使用以下命令管理后台服务器：
+
+```bash
+npx astro dev stop
+npx astro dev status
+npx astro dev logs
 ```
 
-Manage the background server with `astro dev stop`, `astro dev status`, and `astro dev logs`.
+## 文档
 
-## Git
-
-- 禁止擅自创建新分支。
-- 默认必须在当前分支提交并推送代码。
-- 只有用户明确要求创建或切换分支时，才允许执行相关操作。
-
-## Documentation
-
-Full documentation: https://docs.astro.build
-
-Consult these guides before working on related tasks:
-
-- [Adding pages, dynamic routes, or middleware](https://docs.astro.build/en/guides/routing/)
-- [Working with Astro components](https://docs.astro.build/en/basics/astro-components/)
-- [Using React, Vue, Svelte, or other framework components](https://docs.astro.build/en/guides/framework-components/)
-- [Adding or managing content](https://docs.astro.build/en/guides/content-collections/)
-- [Adding styles or using Tailwind](https://docs.astro.build/en/guides/styling/)
-- [Supporting multiple languages](https://docs.astro.build/en/guides/internationalization/)
+涉及 Astro 路由、组件、框架集成、内容集合、样式或国际化时，优先参考官方文档：https://docs.astro.build
