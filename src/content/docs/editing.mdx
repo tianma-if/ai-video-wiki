@@ -8,8 +8,8 @@ import Grid from '../../components/Grid.astro';
 <h2 id="editing-transitions">物理与遮罩无缝转场</h2>
 
 <Grid>
-  <h3 id="editing-seamless-transitions">无缝物理转场 (Seamless Transitions)</h3>
   <Card 
+    id="editing-seamless-transitions"
     title="无缝物理转场 (Seamless Transitions)" 
     desc="利用前一镜头的物理运动（如快速摇镜头、黑场遮挡）作为后一镜头的切入，实现无痕切换。"
     prompt="[镜头A结尾] camera pans right fast, motion blur. [镜头B开头] camera pans right, revealing..."
@@ -18,8 +18,8 @@ import Grid from '../../components/Grid.astro';
     * **核心机理**：利用运动模糊（Motion Blur）或光影匹配（Match Cut），省去生硬的数字化后期特效转场。
   </Card>
 
-  <h3 id="editing-mask-transition">遮罩黑场转场 (Mask Transition)</h3>
   <Card 
+    id="editing-mask-transition"
     title="遮罩黑场转场 (Mask Transition)" 
     desc="利用黑色物体挡住镜头，制造黑场，下一镜头再从黑色物体拉开，实现转场。"
     prompt="[镜头A结尾] object passes close to camera, black screen. [镜头B开头] camera moves backward from a dark shadow, revealing..."
@@ -32,8 +32,8 @@ import Grid from '../../components/Grid.astro';
 <h2 id="editing-ai-fix">AI 视频后期修复</h2>
 
 <Grid>
-  <h3 id="editing-face-flicker">面部闪烁修复 (Face Flicker Fix)</h3>
   <Card 
+    id="editing-face-flicker"
     title="面部闪烁修复 (Face Flicker Fix)" 
     desc="解决 AI 视频在连续帧中脸部五官变形、眼球闪动与细节丢失的常见顽疾。"
     workflow="工作流建议：1. 导出原视频帧 2. 使用 SD WebUI + ControlNet Tile/Ip-Adapter 进行局部图生图面部重绘 3. 使用 EbSynth / TemporalKit 重新合并回视频"
@@ -41,8 +41,8 @@ import Grid from '../../components/Grid.astro';
     * **工具链**：Stable Diffusion (ControlNet/Inpaint) 或专用 AI 面部恢复工具（如 GFPGAN / LivePortrait / Facefusion）。
   </Card>
 
-  <h3 id="editing-upscaling">AI 4K 无损放大 (AI Upscaling)</h3>
   <Card 
+    id="editing-upscaling"
     title="AI 4K 无损放大 (AI Upscaling)" 
     desc="使用超分辨率模型将 AI 生成的低画质/低清视频（如 720p/1080p）无损插值放大至 4K 分辨率。"
     workflow="工作流参数：使用 Topaz Video AI，选择 Proteus (Fine Tune) 或者是 Iris (适用于人物面部) 模型，设置 Recover Details=40，Dehalo=15"
@@ -54,8 +54,8 @@ import Grid from '../../components/Grid.astro';
 <h2 id="editing-montage">节奏控场与蒙太奇</h2>
 
 <Grid>
-  <h3 id="editing-rhythm">节奏气口控制 (Rhythm & Pacing)</h3>
   <Card 
+    id="editing-rhythm"
     title="节奏气口控制 (Rhythm & Pacing)" 
     desc="通过音轨与画面的切点（Cut-on-beat）及呼吸感卡点，精准掌控视频信息的传递密度。"
     workflow="剪辑卡点法则：知识类视频气口保留约 0.1-0.2 秒（避免过于局促）；情绪高潮部分配合 BGM 鼓点进行画面淡入淡出（J-Cut / L-Cut 技巧）。"

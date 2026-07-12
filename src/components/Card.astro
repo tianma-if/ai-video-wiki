@@ -1,12 +1,12 @@
 ---
-interface Props { title: string; desc?: string; prompt?: string; promptVariant?: string; promptDetail?: string; workflow?: string; preview?: string; previewStatic?: string; }
-const { title, desc, prompt, promptVariant, promptDetail, workflow, preview, previewStatic } = Astro.props;
+interface Props { id?: string; title: string; desc?: string; prompt?: string; promptVariant?: string; promptDetail?: string; workflow?: string; preview?: string; previewStatic?: string; }
+const { id, title, desc, prompt, promptVariant, promptDetail, workflow, preview, previewStatic } = Astro.props;
 const promptText = [prompt, promptVariant, promptDetail].filter(Boolean).join('\n');
 ---
 <article class="group overflow-hidden rounded-2xl border border-zinc-900/10 bg-white transition duration-300 hover:-translate-y-1 hover:border-zinc-900/25 hover:shadow-lg">
   {preview && <div class="relative aspect-video overflow-hidden border-b border-zinc-900/10 bg-zinc-100"><img src={previewStatic || preview} data-animated={preview} data-static={previewStatic || preview} alt={title} class="h-full w-full object-cover opacity-75 grayscale transition duration-500 group-hover:scale-105 group-hover:opacity-100 group-hover:grayscale-0" loading="lazy" /><span class="absolute bottom-3 left-3 rounded-full border border-white/50 bg-white/80 px-2.5 py-1 text-[10px] uppercase tracking-wider text-zinc-700 backdrop-blur">Preview</span></div>}
   <div class="p-5">
-    <h3 class="m-0 text-base font-semibold tracking-tight text-zinc-900">{title}</h3>
+    <h3 id={id} class="m-0 text-base font-semibold tracking-tight text-zinc-900">{title}</h3>
     {desc && <p class="mt-2 text-xs leading-5 text-zinc-500">{desc}</p>}
     {promptText && <div class="mt-5 rounded-lg border border-zinc-900/10 bg-zinc-50 p-3"><div class="mb-2 flex items-center justify-between gap-2"><span class="text-[10px] font-semibold uppercase tracking-wider text-zinc-500">Prompt</span><button class="copy-btn inline-flex h-6 items-center justify-center rounded-md px-2 text-[11px] font-medium text-zinc-500 transition-colors hover:bg-zinc-200 hover:text-zinc-900" data-text={promptText} type="button">复制</button></div><code class="block whitespace-pre-line break-words text-[11px] leading-5 text-zinc-700">{promptText}</code></div>}
     {workflow && <div class="mt-2 rounded-lg border border-zinc-900/10 bg-zinc-50 p-3"><div class="mb-2 flex items-center justify-between gap-2"><span class="text-[10px] font-semibold uppercase tracking-wider text-zinc-500">Workflow</span><button class="copy-btn inline-flex h-6 items-center justify-center rounded-md px-2 text-[11px] font-medium text-zinc-500 transition-colors hover:bg-zinc-200 hover:text-zinc-900" data-text={workflow} type="button">复制</button></div><code class="block whitespace-pre-line break-words text-[11px] leading-5 text-zinc-700">{workflow}</code></div>}

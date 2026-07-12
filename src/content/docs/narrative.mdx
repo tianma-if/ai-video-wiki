@@ -10,8 +10,8 @@ import Grid from '../../components/Grid.astro';
 <h2 id="narrative-film-structures">电影经典剧本结构</h2>
 
 <Grid>
-  <h3 id="narrative-three-act">三幕式结构 (Three-Act Structure)</h3>
   <Card 
+    id="narrative-three-act"
     title="三幕式结构 (Three-Act Structure)" 
     desc="将视频分为：建置（占25%）、冲突（占50%）、解决（占25%）三大板块，符合人类最自然的心智逻辑。"
     prompt="[剧情逻辑限制] 按照三幕式结构构建，确保中点有重大危机，结尾有最终高潮"
@@ -21,8 +21,8 @@ import Grid from '../../components/Grid.astro';
     * **适用范围**：剧情长片、解说视频、微电影。
   </Card>
 
-  <h3 id="narrative-heros-journey">英雄之旅模型 (Hero's Journey)</h3>
   <Card 
+    id="narrative-heros-journey"
     title="英雄之旅模型 (Hero's Journey)" 
     desc="经典的神话学叙事框架，适合成长型故事、个人IP包装或品牌叙事。"
     prompt="[故事弧光] 主角经历从平凡世界出发、遭遇严峻考验、蜕变并带着‘宝物’归来的弧光变化"
@@ -32,8 +32,8 @@ import Grid from '../../components/Grid.astro';
     * **适用范围**：奇幻、冒险、商业广告、个人励志IP。
   </Card>
 
-  <h3 id="narrative-save-the-cat">救猫咪节拍表 (Save the Cat!)</h3>
   <Card 
+    id="narrative-save-the-cat"
     title="救猫咪节拍表 (Save the Cat!)" 
     desc="将三幕式极度细化为 15 个节拍，商业类型片最精准的结构配方。"
     prompt="[商业片节拍] 严格遵守救猫咪15节拍，包括开场画面、主题呈现、争论、灵魂暗夜等"
@@ -47,8 +47,8 @@ import Grid from '../../components/Grid.astro';
 <h2 id="narrative-short-structures">短视频爆款叙事结构</h2>
 
 <Grid>
-  <h3 id="narrative-twist">欧·亨利式反转结构 (Plot Twist)</h3>
   <Card 
+    id="narrative-twist"
     title="欧·亨利式反转结构 (Plot Twist)" 
     desc="通过铺垫常规预期（A面），并在结尾出其不意地揭示截然相反的真相（B面），引爆互动。"
     prompt="[剧情反转] 结局产生合理的巨大反转，打破观众的既有心理预期"
@@ -58,8 +58,8 @@ import Grid from '../../components/Grid.astro';
     * **适用范围**：剧情短剧、创意广告、幽默搞笑段子。
   </Card>
 
-  <h3 id="narrative-inverted-pyramid">倒金字塔/沙漏结构 (Inverted Pyramid)</h3>
   <Card 
+    id="narrative-inverted-pyramid"
     title="倒金字塔/沙漏结构 (Inverted Pyramid)" 
     desc="结论先行，将最震撼或最重要的信息放在前3秒，随后剥丝抽茧讲细节，最后总结。"
     prompt="[结构限定] 倒金字塔结构，首句爆点，后续展开，尾部收尾"
@@ -69,8 +69,8 @@ import Grid from '../../components/Grid.astro';
     * **适用范围**：探店、科普、知识干货、故事解说。
   </Card>
 
-  <h3 id="narrative-infinite-loop">循环无缝衔接结构 (Infinite Loop)</h3>
   <Card 
+    id="narrative-infinite-loop"
     title="循环无缝衔接结构 (Infinite Loop)" 
     desc="视频片尾最后一句话与片头第一句话在文案和画面上完美重合，形成死循环。"
     prompt="[循环衔接] 视频结尾的台词与开头的台词能够无缝首尾相连"
@@ -84,13 +84,13 @@ import Grid from '../../components/Grid.astro';
 <h2 id="narrative-ai-formats">AI 视频脚本格式规范</h2>
 
 <Grid>
-  <h3 id="narrative-double-column">分镜脚本双栏格式 (Two-Column Storyboard)</h3>
   <Card 
-    title="分镜脚本双栏格式 (Two-Column)" 
+    id="narrative-double-column"
+    title="分镜脚本双栏格式 (Two-Column Storyboard)" 
     desc="左右分栏，左侧为画面描述（含景别/运镜提示词），右侧为旁白与音效，方便 AI 工具读取。"
     prompt="[格式限定] Markdown Table format with headers: [Time, Visual & Camera Prompt, Voiceover/Audio]"
     workflow="格式化指令：'请将以下故事脚本转换为双栏分镜脚本表格，左栏是画面内容和适合 Midjourney/Runway 的英文运镜提示词，右栏是旁白和音效。'"
   >
-    * **优势**：结构化清晰，一目了然，方便导演 and AI 绘图/视频生成工具分工。
+    * **优势**：结构化清晰，一目了然，方便导演和 AI 绘图/视频生成工具分工。
   </Card>
 </Grid>

@@ -10,8 +10,8 @@ import Grid from '../../components/Grid.astro';
 <h2 id="framing-shots">特写/中景/全景景别</h2>
 
 <Grid>
-  <h3 id="framing-close-up">特写 (Close-Up - CU)</h3>
   <Card 
+    id="framing-close-up"
     title="特写 (Close-Up - CU)" 
     desc="画面聚焦于人物肩部以上或单个物体，突出面部表情、眼神细节或微观动态。"
     prompt="Close-up shot of ..., facial detail, eyes focus, shallow depth of field"
@@ -23,8 +23,8 @@ import Grid from '../../components/Grid.astro';
     * **作用**：刻画角色心理情绪，强化细节表达。
   </Card>
 
-  <h3 id="framing-medium-shot">中景 (Medium Shot - MS)</h3>
   <Card 
+    id="framing-medium-shot"
     title="中景 (Medium Shot - MS)" 
     desc="画面包含人物膝盖或腰部以上，展现人物的肢体语言、手势以及与环境的初步互动。"
     prompt="Medium shot of ..., character interacting, waist-up composition"
@@ -36,8 +36,8 @@ import Grid from '../../components/Grid.astro';
     * **作用**：叙事主力镜头，适合交代人物对话与动作推进。
   </Card>
 
-  <h3 id="framing-wide-shot">全景与远景 (Full / Establishing Shot)</h3>
   <Card 
+    id="framing-wide-shot"
     title="全景与远景 (Full / Establishing Shot)" 
     desc="展现主体全身、与周围环境的互动，或交代宏大的故事背景与世界观。"
     prompt="Wide establishing shot, cinematic panorama, epic scale"
@@ -53,9 +53,9 @@ import Grid from '../../components/Grid.astro';
 <h2 id="framing-angles">仰角/倾斜/上帝视角</h2>
 
 <Grid>
-  <h3 id="framing-birds-eye">上帝视角/垂直俯瞰 (Bird's Eye View)</h3>
   <Card 
-    title="俯瞰/上帝视角 (Bird's Eye View)" 
+    id="framing-birds-eye"
+    title="上帝视角/垂直俯瞰 (Bird's Eye View)" 
     desc="镜头垂直向下拍摄，具有强烈的排版感和极高维度的视觉审视力。"
     prompt="Top-down shot, bird's eye view, aerial photography"
     promptVariant="Camera Top-down view, drone perspective"
@@ -65,8 +65,8 @@ import Grid from '../../components/Grid.astro';
     * **作用**：展示道路、人群、建筑的几何美感或交代迷失感。
   </Card>
 
-  <h3 id="framing-low-angle">仰角镜头 (Low-Angle Shot)</h3>
   <Card 
+    id="framing-low-angle"
     title="仰角镜头 (Low-Angle Shot)" 
     desc="摄像机自下而上拍摄主体，使主体显得高大、权威、威严或具有压迫感。"
     prompt="Low-angle shot, looking up at ..., epic perspective, heroic pose"
@@ -77,8 +77,8 @@ import Grid from '../../components/Grid.astro';
     * **作用**：塑造反派的压迫感、英雄人物的伟岸感或建筑物的高耸。
   </Card>
 
-  <h3 id="framing-dutch-angle">荷兰斜角/倾斜构图 (Dutch Angle)</h3>
   <Card 
+    id="framing-dutch-angle"
     title="荷兰斜角/倾斜构图 (Dutch Angle)" 
     desc="镜头故意向一侧倾斜，使地平线不平行，营造不安、紧张、混乱或疯狂的氛围。"
     prompt="Dutch angle shot, tilted frame, diagonal composition, psychological tension"
@@ -93,9 +93,9 @@ import Grid from '../../components/Grid.astro';
 <h2 id="framing-aspect-ratios">AI 画幅比例控制</h2>
 
 <Grid>
-  <h3 id="framing-aspect-ratio-controls">AI 工具画幅比例指令</h3>
   <Card 
-    title="画幅比例控制 (Aspect Ratios)" 
+    id="framing-aspect-ratios"
+    title="AI 工具画幅比例指令" 
     desc="控制生成工具的输出尺寸，满足电影银幕或手机竖屏的播放比例。"
     prompt="Midjourney: --ar 16:9 (横屏) / --ar 9:16 (竖屏) / --ar 2.39:1 (电影宽银幕)"
     promptVariant="Runway / Kling / Luma: 在操作界面选择相应的比例设置，或在提示词中追加 --aspect 16:9"

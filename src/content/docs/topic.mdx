@@ -1,16 +1,16 @@
 ---
 title: "选题与策划"
-description: "爆款脚本公式、受众心理标签与辅助 AI 进行头脑风暴的提示词速查卡片。"
+description: "爆款脚本公式、受众心理标签与辅助 AI 进行头脑风暴 the 提示词速查卡片。"
 ---
 import Card from '../../components/Card.astro';
 import Grid from '../../components/Grid.astro';
 
-<h2 id="topic-overview">选题与策划机制</h2>
+<h2 id="topic-overview">选题策划与受众心理</h2>
 
 <Grid>
-  <h3 id="topic-hooks">爆款黄金开头 (Hooks)</h3>
   <Card 
-    title="爆款黄金开头 (Hooks)" 
+    id="topic-hooks"
+    title="短视频黄金前3秒 (Hooks)" 
     desc="前 3 秒吸引注意力的文案黄金法则，适用于短视频和社交媒体宣发。"
     prompt="[视频开头] 画面快速切换，高饱和度，镜头拉近"
     promptVariant="[开头提示词] 快速平移镜头，高光影对比"
@@ -20,9 +20,9 @@ import Grid from '../../components/Grid.astro';
     * **常用公式**：直奔痛点法、否定常识法、视觉冲击法。
   </Card>
 
-  <h3 id="topic-emotional-drivers">情绪驱动模式 (Emotional Drivers)</h3>
   <Card 
-    title="情绪驱动模式 (Emotional Drivers)" 
+    id="topic-emotional-drivers"
+    title="情绪与共鸣驱动模式" 
     desc="激发受众的好奇、喜悦、恐惧、获得感或自我代入感，增强内容传播粘性。"
     prompt="情绪渲染词：dramatic cinematic lighting, emotional intensity"
     promptVariant="氛围感词汇：moody reflections, dark warm contrast, nostalgic tone"
@@ -31,9 +31,9 @@ import Grid from '../../components/Grid.astro';
     * **应用要点**：AI 生成的脚本必须围绕一种核心情绪展开，避免情绪曲线平铺直叙。
   </Card>
 
-  <h3 id="topic-high-concept">电影长视频概念设定 (High Concept)</h3>
   <Card 
-    title="高概念设定 (High Concept)" 
+    id="topic-high-concept"
+    title="电影长视频概念设定 (High Concept)" 
     desc="用一句话总结故事核心创意（Logline），具有高度的市场可读性和强烈的视觉通感。"
     prompt="[创意设定] 探索一个具有强烈视觉张力的‘What if’高概念，并生成世界观设定"
     promptVariant="[故事内核] A high-concept movie logline: What if [unique premise] occurs, forcing [protagonist] to [core conflict]?"
