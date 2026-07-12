@@ -1,29 +1,48 @@
 ---
 title: "配音与音效"
-description: "控制 AI 语音生成工具的音色、情感语速，以及在 AI 配乐工具中生成符合影视氛围背景音的标签指南。"
+description: "控制 AI 语音生成工具的音色、情感语速，以及在 AI 配乐与音效工具中生成影视级声音的指南。"
 ---
 import Card from '../../components/Card.astro';
 import Grid from '../../components/Grid.astro';
 
-<h2 id="voiceover-overview">声音与音轨设计</h2>
+<h2 id="voiceover-narrator">AI 旁白配音提示词</h2>
 
 <Grid>
-  <h3 id="voiceover-narrator">旁白播音提示词 (Narrator Prompts)</h3>
+  <h3 id="voiceover-voice-settings">旁白播音提示词 (Narrator Prompts)</h3>
   <Card 
-    title="旁白播音提示词 (Narrator Prompts)" 
-    desc="调整 AI 配音工具（如 ElevenLabs, ChatTTS）中的角色情感基调，使其听起来更像专业播音员。"
-    workflow="音色提示词：'deep authoritative male voice, warm tone, professional broadcasting pace, clear articulation, subtle dramatic pause'"
+    title="旁白播音提示词 (Narrator)" 
+    desc="调整 AI 配音工具（如 ElevenLabs, ChatTTS, GPT-SoVITS）中的情感基调与语气，模拟专业配音演员。"
+    workflow="ElevenLabs 提示词：'deep authoritative male voice, warm tone, professional broadcasting pace, clear articulation, subtle dramatic pause'"
   >
-    * **常用参数**：语速（Speed）、稳定性（Stability）与相似度（Clarity）。
-    * **技巧**：在文案中合理加入标点符号（如逗号、省略号），以便 AI 生成天然的停顿与换气音。
+    * **ChatTTS 拟真控制**：在文本中插入特殊控制符（如 `[uv_break]` 控制换气，`[laughter]` 插入笑声）。
+    * **参数调节**：稳定性（Stability）维持在 40-50% 获得高情感起伏，清晰度（Clarity）在 75%+ 确保发音清晰。
   </Card>
+</Grid>
 
-  <h3 id="voiceover-bgm">背景音乐风格 (BGM Style Tags)</h3>
+<h2 id="voiceover-bgm">电影级背景音乐 BGM 风格</h2>
+
+<Grid>
+  <h3 id="voiceover-music-tags">背景音乐风格 (BGM Style Tags)</h3>
   <Card 
     title="背景音乐风格 (BGM Style Tags)" 
     desc="在 Suno 或 Udio 等 AI 配乐工具中，使用精准的乐器与情感描述标签生成影视级的视频背景乐。"
     workflow="配乐 Tag 组合：'cinematic, atmospheric, low synth rumble, subtle piano melody, emotional, building intensity, 80bpm'"
   >
-    * **注意点**：避免写“非常震撼的背景音乐”，而要写具体的物理特征标签，如 `ambient`, `percussion`, `orchestral swell`。
+    * **核心词汇**：避免使用“震撼”等抽象主观词，使用 `ambient` (氛围), `epic orchestral` (史诗管弦), `synthwave` (合成器波) 等风格词。
+  </Card>
+</Grid>
+
+<h2 id="voiceover-foley">环境音与拟音 (Foley)</h2>
+
+<Grid>
+  <h3 id="voiceover-sound-effects">AI 音效与拟音提示词 (Foley)</h3>
+  <Card 
+    title="物理音效生成 (Foley SFX)" 
+    desc="使用 AI 音效生成器（如 ElevenLabs Sound Effects, MyEdit）制作精细的物理环境音和动作音效。"
+    prompt="[Foley] Crisp sound of footsteps walking on dry gravel road, close-up, high definition audio"
+    promptVariant="Cinematic sound design: low bass explosion rumble, debris falling, sci-fi laser blast, stereo field"
+    workflow="音效拼贴：动作切入时追加 0.1s 极短的 Foley 音效（如开关门声、风吹衣物声），能瞬间将 AI 视频的廉价感降到最低。"
+  >
+    * **关键属性**：包含距离感描述（`close-up`, `distant`）和材质描述（`wood`, `metal`, `gravel`）。
   </Card>
 </Grid>
